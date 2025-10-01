@@ -1,0 +1,120 @@
+/*
+    File: index.css
+    Description: Styles specific to the index page, inherits variables from, and generally builds on the styling in globals.css.
+    Date: 25.09.2025
+    Author: Isak Dombestein (isak@dombesteindata.net)
+*/
+
+.hero {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0.5rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.hero-inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .hero-inner {
+      flex-direction: column;
+      text-align: center;
+  }
+}
+
+body.light .hero {
+  background-color: var(--bg-light);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+/* Reduce font size on the hero's header if on a smaller screen */
+@media (max-width: 600px) {
+  .hero h1 {
+      font-size: 2rem;
+  }
+}
+
+body.light .hero h1 {
+  color: var(--text-light);
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: var(--accent);
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.hero .cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero .cta a {
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.hero .cta .btn-primary {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.hero .cta .btn-outline {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.hero .cta a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero .cta .btn-outline:hover {
+  background-color: rgba(182, 158, 255, 0.1);
+}
+
+.hero-image {
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 500px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.hero-image #hero-image-subtext {
+  color: var(--text-dark);
+  font-size: 0.75rem;
+}
+
+body.light .hero-image #hero-image-subtext {
+  color: var(--text-light);
+}

@@ -1,0 +1,399 @@
+/** 
+* This is a custom implementation of Tailwind's styles and the main styles
+* currently available at https://domhesteindata.net
+*
+* This has been converted into standard CSS and should be somewhat accurate,
+* ..but can also be a bit off in some areas.
+*/
+:root {
+    --items-per-page: 4;
+    --background: hsl(0, 0%, 100%);
+    --foreground: hsl(240, 10%, 3.9%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(240, 10%, 3.9%);
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: hsl(240, 10%, 3.9%);
+    --primary: hsl(142.1, 76.2%, 36.3%);
+    --primary-foreground: hsl(355.7, 100%, 97.3%);
+    --secondary: hsl(240, 4.8%, 95.9%);
+    --secondary-foreground: hsl(240, 5.9%, 10%);
+    --muted: hsl(240, 4.8%, 95.9%);
+    --muted-foreground: hsl(240, 3.8%, 46.1%);
+    --accent: hsl(240, 4.8%, 95.9%);
+    --accent-foreground: hsl(240, 5.9%, 10%);
+    --destructive: hsl(0, 84.2%, 60.2%);
+    --destructive-foreground: hsl(0, 0%, 98%);
+    --border: hsl(240, 5.9%, 90%);
+    --input: hsl(240, 5.9%, 90%);
+    --ring: hsl(142.1, 76.2%, 36.3%);
+    --radius: 0.5rem;
+    --bg: #0a0c1a;
+    --text: #e0e0e0;
+    --accent: #ff40bf;
+    --accent-soft: rgba(255, 64, 191, 0.15);
+    --glow: #00ff8f;
+    --radius-pill: 999px;
+    --radius-sm: 0.5rem;
+    --transition: all 0.3s ease;
+
+}
+
+.dark {
+  --background: hsl(20, 14.3%, 4.1%);
+  --foreground: hsl(0, 0%, 95%);
+  --card: hsl(24, 9.8%, 10%);
+  --card-foreground: hsl(0, 0%, 95%);
+  --popover: hsl(0, 0%, 9%);
+  --popover-foreground: hsl(0, 0%, 95%);
+  --primary: hsl(142.1, 70.6%, 45.3%);
+  --primary-foreground: hsl(144.9, 80.4%, 10%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --accent: hsl(12, 6.5%, 15.1%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 85.7%, 97.3%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --ring: hsl(142.4, 71.8%, 29.2%);
+}
+
+.nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-pill);
+    padding: 0.5rem 2rem;
+    box-shadow: 3px 2px 5px #7c7575, -3px -2px 4px #7c7575;
+    backdrop-filter: blur(10px);
+    display: flex;
+    gap: 2rem;
+    z-index: 1000;
+    transition: var(--transition);
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 15px;;
+    margin: 0;
+}
+
+.nav-item {
+    list-style: none;
+}
+
+
+#active a {
+    color: var(--text);
+    opacity: 1;
+}
+
+.nav a {
+    color: var(--text);
+    opacity: 0.5;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    opacity: 1;
+    transition: var(--transition);
+}
+
+.nav.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-container {
+    display: flex;
+    width: max-content;
+    animation: scroll-loop 30s linear infinite;
+}
+
+.carousel-item {
+    position: relative;
+    width: 500px;
+    text-align: center;
+    background-color: transparent;
+    opacity: 0.5;
+    transition: var(--transition);
+    margin-right: 2rem;
+}
+
+.carousel-item::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 80%);
+    z-index: 0;
+    border-radius: 50%;
+}
+
+.carousel-item img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.carousel-item:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.carousel-spacer {
+    flex: 0 0 100px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 140px 50px 100px;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-left,
+.content-right {
+    flex: 2;
+    width: 45%;
+    margin: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    border: 1px solig rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.mainContent #top {
+    margin-top: 6rem;
+}
+
+.project {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+}
+
+#fc-scsht {
+    filter: blur(90%);
+    max-height: 250px;
+    max-width: 550px;
+}
+
+.glow-1 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: #b07ecc;
+    background: radial-gradient(circle,rgba(176, 126, 204, 1) 0%, rgba(204, 88, 88, 1) 50%, rgba(247, 198, 129, 1) 100%);
+    border-radius: 50%;
+    filter: blur(200px);
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: glowMove 8s infinite alternate ease-in-out;
+    opacity: 0.5;
+}
+
+.glow-2 {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: #E4F1FE;
+    background: radial-gradient(circle, rgba(103, 132, 159 1) 0%, rgba(228, 241, 254, 1) 100%);
+    border-radius: 50%;
+    filter: blur(200px);
+    top: 50%;
+    left: 80%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: glowMove 8s infinite alternate ease-in-out;
+    opacity: 0.5;
+}
+
+.glow-3 {
+    position: absolute;
+    width:500px;
+    height: 500px;
+    background: #b07ecc;
+    background: radial-gradient(circle,rgba(176, 126, 204, 1) 0%, rgba(204, 88, 88, 1) 50%, rgba(247, 198, 129, 1) 100%);
+    border-radius: 50%;
+    filter: blur(200px);
+    top: 70%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    animation: glowMove 8s infinite alternate ease-in-out;
+    opacity: 0.5;
+}
+
+.button {
+    display: inline-flex;
+    gap: 0.5rem;
+    background-color: rgba(163, 46, 204, 0.5);
+    padding: 10px;
+    margin: 25px;
+    border-radius: 50px;
+    max-width: 250px;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.button:hover {
+    background-color: rgba(163, 46, 204, 1);
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.newtab {
+    color: white;
+    width: 25px;
+    height: 25px;
+}
+
+.button .newtab {
+    position: relative;
+    padding-left: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes glowMove {
+    0% {
+        transform: translate (-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+    50% {
+        transform: translate(-48%, -52%) scale(1.1);
+        opacity: 0.6;
+    }
+    100% {
+        transform: translate(-52%, -48%) scale(1.2);
+        opacity: 0.4;
+    }
+}
+
+@keyframes scroll-loop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* HeroCards background shadow */
+.shadow {
+  position: absolute;
+  background: hsl(var(--primary) / 0%);
+  border-radius: 24px;
+  rotate: 35deg;
+  z-index: -1;
+  width: 260px;
+  top: 200px;
+  height: 400px;
+  filter: blur(150px);
+  will-change: transform;
+  animation: shadow-slide infinite 4s linear alternate;
+}
+
+@keyframes shadow-slide {
+  from {
+    background: hsl(var(--primary) / 20%);
+    right: 460px;
+  }
+  to {
+    background: hsl(var(--primary) / 80%);
+    right: 160px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .shadow {
+    top: 70px;
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 460px;
+    }
+    to {
+      background: hsl(var(--primary) / 50%);
+      right: 160px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .shadow {
+    top: 70px;
+    width: 100px;
+    height: 350px;
+    filter: blur(60px);
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 280px;
+    }
+    to {
+      background: hsl(var(--primary) / 30%);
+      right: 100px;
+    }
+  }
+}

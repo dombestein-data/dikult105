@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background animation div -->
+     <div class="glow-1"></div>
+     <div class="glow-2"></div>
+     <div class="glow-3"></div>
+    
+    <div class="nav">
+        <ul class="nav-links">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item" id="active"><a href="#">Projects</a></li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <div class="mainContent">
+        <div class="project" id="top">
+            <div class="content-left">
+                <h1>learn.dombesteindata.net</h1>
+                <p>
+                    <strong>learn.dombesteindata.net</strong> is a lightweight educational platform for teaching web development.
+                    Originally built to support a introductory crash course in Web Development as part of the University of Bergen's DIKULT105 course, it focuses on hands-on, framework-free learning - perfect for students exploring code and interactivity for the first time.
+                    <br />
+                    <hr />
+                    <i>Stack Highlights</i>
+                </p>
+                <ul>
+                    <li>Astro (Static-first architecture)</li>
+                    <li>React components for interativity</li>
+                    <li>TailwindCSS styles</li>
+                    <li>Hosted on Cloudflare Workers</li>
+                </ul>
+
+                <a class="link" href="https://learn.dombesteindata.net" target="_blank" rel="noopener noreferrer">
+                    <div class="button">
+                        Visit Page <img class="newtab" src="./assets/newTab.svg" />
+                    </div>
+                </a>
+                
+                <a class="link" href="https://github.com/isak-dombestein/learn.dombesteindata.net" target="_blank" rel="noopener noreferrer">
+                    <div class="button">
+                        Visit GitHub Repo <img class="newtab" src="./assets/newTab.svg" />
+                    </div>
+                </a>
+            </div>
+
+            <div class="content-right">
+                <!-- Project #3 Img -->
+                 <img src="./assets/dd_learn.png" alt="learn.dombesteindata.net Homepage" width="800" height="500" />
+            </div>
+        </div>
+        
+        <div class="project">
+            <div class="content-left">
+                <!-- Project #2 Img -->
+                <img src="./assets/focaline.png" alt="Focaline" width="800" height="500" />
+            </div>
+
+            <div class="content-right">
+                <h1>Focaline (In Development)</h1>
+                <p>
+                    Focaline is a cross-platform productivity app that brings together calendars, notes, emails and real-time collaboration into one workspace.
+                    Designed to reduce context-switching and improve focus, Focaline offers a clean interface, fast syncing and AI-assisted organization for busy individuals and teams.
+                    <br />
+                    <hr />
+                    <i>Stack Highlights:</i>
+                </p>
+
+                <ul>
+                    <li><strong>Frontend: </strong> Astro + React + Tailwind (with shadcn/ui components)</li>
+                    <li><strong>Backend: </strong>Hono (on Cloudflare Workers) + Supabase Auth</li>
+                    <li><strong>Database: </strong>PostgreSQL via Supabase</li>
+                    <li><strong>General Features: </strong>Real-time syncing, Fullcalendar integration, AI-powered notes</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="content-left">
+                <!-- Markwright -->
+                <h1>Markwright</h1>
+                <p>
+                    A Node.js CLI tool for converting Markdown files into styled A4 PDFs with syntax highlighting and GitHub Dark theme support.
+                    Uses puppeteer for headless rendering.
+                    
+                    <br />
+                    <hr />
+                    
+                    <i>Stack Highlights:</i>
+                </p>
+                <ul>
+                    <li>Node.js + marked, marked-highlight & highlight.js</li>
+                    <li>Puppeteer for headless rendering and PDF support</li>
+                    <li>GitHub Dark theme for syntax highlighting</li>
+                    <li>CLI-based input/output file handling</li>
+                    <li>Output: Styled A4 PDF with accurate markdown formatting</li>
+                </ul>
+
+                <a class="link" href="https://github.com/isak-dombestein/markwright" target="_blank" rel="noopener noreferrer">
+                    <div class="button">
+                        Visit GitHub Repo <img src="./assets/newTab.svg" />
+                    </div>
+                </a>
+            </div>
+            <div class="content-right">
+                <!-- JCompressor -->
+                <h1>JCompressor</h1>
+                <p>
+                    A Node.js CLI tool for compressing files, folders and images into zip archives with customizable strength and a focus on simplicity.
+                    Still in Alpha, but fully working and published on GitHub.
+
+                    <br />
+                    <hr />
+                    <i>Stack Highlights:</i>
+                </p>
+                <ul>
+                    <li>Node.js with yazl, fs and async recursion</li>
+                    <li>File and directory compression using ZIP format</li>
+                    <li>No external dependencies except for Node core and yazl</li>
+                </ul>
+
+                <a class="link" href="https://github.com/isak-dombestein/jcompressor" target="_blank" rel="noopener noreferrer">
+                    <div class="button">
+                        Visit GitHub Repo <img src="./assets/newTab.svg" />
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="content-left">
+                <h1>Velox (In Development)</h1>
+                <p>
+                    Velox is a modern, high-performance ERP system designed to replace legacy tools like Microsoft Dynamics AX.
+                    Built with a focus on speed, simplicity and seamless workflow, Velox helps retail and logistics companies manage inventory, orders and vendor relationships efficiently.
+                    The system supports gradual data migration and continuous sync from older platforms to ease transitions.
+                    <br />
+                    <hr />
+
+                    <i>Stack Highlights:</i>
+                </p>
+                <ul>
+                    <li><strong>Frontend: </strong>Astro + React + Tailwind (with shadncn/ui components)</li>
+                    <li><strong>Backend: </strong>Hono (on Cloudflare Workers)</li>
+                    <li><strong>Database: </strong>PostgreSQL via Neon with Drizzle ORM</li>
+                    <li><strong>Other: </strong>UploadThing for File uploads, Axion for Logging</li>
+                </ul>
+            </div>
+
+            <div class="content-right">
+                <!-- Velox Img goes here -->
+                 <img src="./assets/velox.png" alt="Velox Screenshot" width="800" height="500" />
+            </div>
+        </div>
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

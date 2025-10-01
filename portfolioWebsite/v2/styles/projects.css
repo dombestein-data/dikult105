@@ -1,0 +1,177 @@
+/*
+    File: projects.css
+    Description: Styles specific to the projects page, inherits variables from, and generally builds on the styling in globals.css.
+    Date: 27.09.2025
+    Author: Isak Dombestein (isak@dombesteindata.net)
+*/
+
+.projects {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
+
+.project-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: var(--card);
+    color: var(--foreground);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-card p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.project-card .btn {
+    display: inline-block;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.mini-projects {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+.mini-card {
+    background-color: var(--card);
+    color: var(--foreground);
+    padding: 1rem 1.25rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    max-width: 200px;
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mini-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.mini-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.mini-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    position: relative;
+    /* 
+        background and color here have been assigned two different values
+        here in case something goes wrong with inheriting the values
+        from the :root variables in globals.css. Better to be safe than sorry.
+
+        Yes, they are redundant. No, I will not remove them.
+        CSS has pulled enough 180's on me in the past, I don't trust 100%
+        it will do it's job.
+    */
+    background: var(--card, white);
+    color: var(--foreground, black);
+    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 12px;
+    z-index: 2;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.3s ease;
+    text-align: center;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: inherit;
+}
+
+.modal-links {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.modal-content h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+#modal-techstack {
+    list-style-position: inside;
+    padding-left: 0;
+    margin: 0 auto;
+}
+
+#modal-techstack li {
+    margin: 0.25rem 0;
+}

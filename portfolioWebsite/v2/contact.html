@@ -1,0 +1,82 @@
+<!--
+    File: index.html
+    Description: Contact part of portfolio mockup page
+    Date: 27.09.2025
+    Author: Isak Dombestein (isak@dombesteindata.net)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Isak Dombestein</title>
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="container nav-inner">
+            <a href="./index.html">
+                <h1 class="logo">Isak Dombestein</h1>
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
+                            <span id="theme-icon"></span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contact-form">
+        <h2>Contact Me</h2>
+        <p>Use the below form to get in contact with me, or press one of the social buttons in the footer.</p>
+        <form class="contact">
+            <!--  -->
+            <label for="name">Name:</label>
+            <input id="name" class="input-field" type="text" placeholder="Your Name" required />
+
+            <label for="email">Contact Email:</label>
+            <input id="email" class="input-field" type="email" placeholder="someone@example.com" required />
+
+            <label for="message">Message:</label>
+            <textarea rows="5" class="input-field" id="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form> 
+    </main>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://github.com/isak-dombestein" target="_blank" aria-label="GitHub">
+                <span class="social-icon" data-icon="github"></span>
+            </a>
+            <a href="mailto:isak@dombesteindata.net" target="_blank" aria-label="Email">
+                <span class="social-icon" data-icon="email"></span>
+            </a>
+            <a href="https://x.com/idombestein" target="_blank" aria-label="X">
+                <span class="social-icon" data-icon="x"></span>
+            </a>
+            <a href="https://www.linkedin.com/in/isak-dombestein-465712279/" target="_blank" aria-label="LinkedIn">
+                <span class="social-icon" data-icon="linkedin"></span>
+            </a>
+        </div>
+        <div class="container">
+            <p>&copy; 2025, Isak Dombestein, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/contact.js"></script>
+</body>
+</html>

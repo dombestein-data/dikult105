@@ -1,0 +1,86 @@
+<!--
+    File: index.html
+    Description: Homepage part of portfolio mockup page
+    Date: 25.09.2025
+    Author: Isak Dombestein (isak@dombesteindata.net)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isak Dombestein - Portfolio</title>
+    <link rel="stylesheet" href="./styles/globals.css">
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="container nav-inner">
+            <a href="#">
+                <h1 class="logo">Isak Dombestein</h1>
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
+                            <span id="theme-icon"></span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="hero">
+            <div class="hero-inner">
+                <div class="hero-text">
+                    <h1>Isak Dombestein</h1>
+                    <h2>Full Stack Developer, Nerd and Tinkerer</h2>
+                    <p>
+                        I design and build modern web experiences, from intuitive web interfaces to performant backends.
+                        Currently working on <strong>Focaline</strong>, <strong>Velox</strong> and other tools to make the digital life easier.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="./projects.html" class="btn btn-primary">Explore Projects</a>
+                        <a href="./assets/resume.pdf" class="btn btn-outline" download>Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="assets/profile.jpg" alt="Isak Dombestein Portrait" loading="lazy" />
+                    <p id="hero-image-subtext"><i><strong>Image: </strong>Alexander Wallem / Wallem Media</i></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://github.com/isak-dombestein" target="_blank" aria-label="GitHub">
+                <span class="social-icon" data-icon="github"></span>
+            </a>
+            <a href="mailto:isak@dombesteindata.net" target="_blank" aria-label="Email">
+                <span class="social-icon" data-icon="email"></span>
+            </a>
+            <a href="https://x.com/idombestein" target="_blank" aria-label="X">
+                <span class="social-icon" data-icon="x"></span>
+            </a>
+            <a href="https://www.linkedin.com/in/isak-dombestein-465712279/" target="_blank" aria-label="LinkedIn">
+                <span class="social-icon" data-icon="linkedin"></span>
+            </a>
+        </div>
+        <div class="container">
+            <p>&copy; 2025, Isak Dombestein, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./scripts/main.js"></script>
+</body>
+</html>

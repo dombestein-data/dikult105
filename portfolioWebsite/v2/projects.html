@@ -1,0 +1,125 @@
+<!--
+    File: projects.html
+    Description: Projects part of portfolio mockup page
+    Date: 27.09.2025
+    Author: Isak Dombestein (isak@dombesteindata.net)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Isak Dombestein</title>
+    <link rel="stylesheet" href="./styles/globals.css" />
+    <link rel="stylesheet" href="./styles/projects.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar" role="banner">
+        <div class="container nav-inner">
+            <a href="./index.html"> 
+                <h1 class="logo">Isak Dombestein</h1>
+            </a>
+            <nav role="navigation" aria-label="Main navigation">
+                <ul class="nav-links">
+                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./about.html">About</a></li>
+                    <li><a href="./contact.html">Contact</a></li>
+                    <li>
+                        <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
+                            <span id="theme-icon"></span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="projects">
+        <section class="section">
+            <div class="container">
+                <h1 class="section-title">Projects</h1>
+                <p>Click on a project to learn more.</p>
+                <div class="project-grid">
+                    <article class="project-card" onclick="openProjectModal('focaline')">
+                        <img src="./assets/focaline.png" alt="Focaline" />
+                        <h2>Focaline (In Development)</h2>
+                        <p>Cross-platform productivity app with calendar, AI notes & email integration.</p>
+                    </article>
+
+                    <article class="project-card" onclick="openProjectModal('learn')">
+                        <img src="./assets/dd_learn.png" alt="Dombestein Data Learning Resources homepage" />
+                        <h2>Dombestein Data Learning Resources</h2>
+                        <p>Online learning resource aimed at University level students learning web development</p>
+                    </article>
+
+                    <article class="project-card" onclick="openProjectModal('velox')">
+                        <img src="./assets/velox.png" alt="Velox" />
+                        <h2>Velox (In Development)</h2>
+                        <p>Modern, cloud-based ERP system with core focus on speed, reliability and user friendly interface.</p>
+                    </article>
+                </div>
+                <div class="mini-projects">
+                    <div class="mini-card" onclick="openProjectModal('markwright')">
+                        <h3>Markwright</h3>
+                        <p>CLI Utility to convert Markdown files into styled, printable PDFs with code highlighting.</p>
+                    </div>
+                    <div class="mini-card" onclick="openProjectModal('jcompressor')">
+                        <h3>JCompressor</h3>
+                        <p>CLI utility for compressing files, folders and images with adjustable compression.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="https://github.com/isak-dombestein" target="_blank" aria-label="GitHub">
+                <span class="social-icon" data-icon="github"></span>
+            </a>
+            <a href="mailto:isak@dombesteindata.net" target="_blank" aria-label="Email">
+                <span class="social-icon" data-icon="email"></span>
+            </a>
+            <a href="https://x.com/idombestein" target="_blank" aria-label="X">
+                <span class="social-icon" data-icon="x"></span>
+            </a>
+            <a href="https://www.linkedin.com/in/isak-dombestein-465712279/" target="_blank" aria-label="LinkedIn">
+                <span class="social-icon" data-icon="linkedin"></span>
+            </a>
+        </div>
+        <div class="container">
+            <p>&copy; 2025, Isak Dombestein, All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- 
+        This is a blank template for the modal that shows when a project is clicked.
+        
+        The data is filled in using JavaScript.
+    -->
+    <div id="project-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div id="modal-backdrop" class="modal-backdrop"></div>
+        <div class="modal-content" tabindex="-1">
+            <button id="modal-close" class="modal-close" aria-label="Close Modal">×</button>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+
+            <h3>Technical Details</h3>
+            <ul id="modal-techstack"></ul>
+            
+            <div class="modal-links">
+                <a id="modal-live" href="#" target="_blank" class="btn btn-outline">Visit Site</a>
+                <a id="modal-github" href="#" target="_blank" class="btn btn-primary">GitHub Repo</a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/data/projInfo.js"></script>
+    <script src="./scripts/projects.js"></script>
+</body>
+</html>

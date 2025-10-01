@@ -1,0 +1,246 @@
+/*
+    File: globals.css
+    Description: 
+      This file defines all the styling that should apply to absolutely all pages. 
+      It also defines custom variables within :root that can be used across other css files in the project.
+    Date: 25.09.2025
+    Author: Isak Dombestein (isak@dombesteindata.net)
+*/
+
+/* Import Inter font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* Root theme + reset */
+:root {
+  --bg-dark: #0e0f1a;
+  --bg-light: #f5f6fa;
+  --text-dark: #eaeaea;
+  --text-light: #1a1a1a;
+  --accent: #b69eff;
+  --accent-light: #8e5df7; 
+  --navy: #1c2230;
+  --font: 'Inter', sans-serif;
+  --card: #1c2230;
+  --foreground: #eaeaea;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, 
+body {
+  font-family: var(--font);
+  line-height: 1.6;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+  scroll-behavior: smooth;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  --accent: var(--accent-light);
+  --card: #ffffff;
+  --foreground: #1a1a1a;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);    
+}
+
+.navbar,
+.footer {
+  background-color: var(--navy);
+  color: var(--text-dark);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-inner a {
+  text-decoration: none;
+  color: var(--text-dark);
+}
+
+body.light .nav-inner a {
+  color: var(--text-light);
+}
+
+body.light .navbar,
+body.light .footer {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.logo {
+  font-size: 1.24rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-links a, 
+.nav-links button {
+  text-decoration: none;
+  color: inherit;
+  background: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  padding: 0.25rem 0.5rem;
+  transition: opacity 0.2s ease;
+}
+
+.nav-links a:hover, 
+.nav-links button:hover {
+  opacity: 0.7;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: white;
+}
+
+.btn-outline {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  background: transparent;
+}
+
+.btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.bon-outline:hover {
+  background-color: rgba(182.158.255.0.1);
+}
+
+.btn-sm {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+}
+
+.section {
+  padding: 4rem 1.5rem;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+body.light .footer {
+  color: var(--text-light);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 1.5rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+  outline: none;
+  color: var(--text-dark);
+}
+
+.social-icons svg{
+  width: 28px;
+  height: 28px;
+  filter: brightness(1.2);
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.social-icons a:hover svg {
+  transform: scale(1.1);
+  filter: brightness(1.5);
+} 
+
+body.light .social-icons a {
+  color: var(--text-light);
+}
+
+.theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+body.light .theme-toggle:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-family: var(--font);
+}
+
+/* If something is supposed to be hidden, it should stay hidden 😡 */
+.hidden {
+  display: none !important;
+}
