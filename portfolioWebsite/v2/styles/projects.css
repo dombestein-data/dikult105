@@ -1,10 +1,3 @@
-/*
-    File: projects.css
-    Description: Styles specific to the projects page, inherits variables from, and generally builds on the styling in globals.css.
-    Date: 27.09.2025
-    Author: Isak Dombestein (isak@dombesteindata.net)
-*/
-
 .projects {
     padding: 4rem 1rem;
     text-align: center;
@@ -18,17 +11,8 @@
 }
 
 .project-card {
-    background-color: var(--card);
-    color: var(--foreground);
     padding: 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-card img {
@@ -54,6 +38,36 @@
     margin-top: 0.5rem;
 }
 
+.project-card,
+.mini-card {
+    background: rgba(18, 20, 30, 0.55);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: transform 180ms ease, border-color 180ms ease, background-color 180ms ease;
+}
+
+.project-card:hover,
+.mini-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(180, 160, 255, 0.28);
+    background: rgba(18, 20, 30, 0.62);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light .project-card,
+body.light .mini-card {
+    background: rgba(248, 250, 255, 0.72);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+body.light .project-card:hover,
+body.light .mini-card:hover {
+    border-color: rgba(120, 95, 210, 0.24);
+    background: rgba(248, 250, 255, 0.80);
+}
+
 .mini-projects {
     display: flex;
     justify-content: center;
@@ -63,14 +77,10 @@
 }
 
 .mini-card {
-    background-color: var(--card);
-    color: var(--foreground);
     padding: 1rem 1.25rem;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     max-width: 200px;
     text-align: left;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .mini-card h3 {
@@ -81,11 +91,6 @@
 .mini-card p {
     font-size: 0.95rem;
     line-height: 1.5;
-}
-
-.mini-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
 .modal {
@@ -104,23 +109,21 @@
 .modal-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(2px);
+    background: rgba(10, 12, 18, 0.68);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+body.light .modal-backdrop {
+    background: rgba(10, 12, 18, 0.35);
 }
 
 .modal-content {
     position: relative;
-    /* 
-        background and color here have been assigned two different values
-        here in case something goes wrong with inheriting the values
-        from the :root variables in globals.css. Better to be safe than sorry.
-
-        Yes, they are redundant. No, I will not remove them.
-        CSS has pulled enough 180's on me in the past, I don't trust 100%
-        it will do it's job.
-    */
-    background: var(--card, white);
-    color: var(--foreground, black);
+    background: rgba(10, 20, 30, 0.72);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     padding: 2rem;
     max-width: 600px;
     width: 90%;
@@ -128,7 +131,17 @@
     z-index: 2;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
     animation: fadeInUp 0.3s ease;
+}
+
+.modal-content h2,
+.modal-content h3,
+.modal-content .modal-links {
     text-align: center;
+}
+
+body.light .modal-content {
+    background: rgba(248, 250, 255, 0.88);
+    border: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 @keyframes fadeInUp {
@@ -143,14 +156,23 @@
 }
 
 .modal-close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    display: grid;
+    place-items: center;
     background: transparent;
     border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
     color: inherit;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+body.light .modal-close:hover {
+    background: rgba(0, 0, 0, 0.06);
 }
 
 .modal-links {
@@ -167,11 +189,23 @@
 }
 
 #modal-techstack {
-    list-style-position: inside;
-    padding-left: 0;
-    margin: 0 auto;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    padding: 0;
 }
 
 #modal-techstack li {
-    margin: 0.25rem 0;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.9rem;
+}
+
+body.light #modal-techstack li {
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba (0, 0, 0, 0.08)
 }

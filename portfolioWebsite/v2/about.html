@@ -1,16 +1,9 @@
-<!--
-    File: about.html
-    Description: About page part of portfolio page mockup.
-    Date: 29.09.2025
-    Author: Isak Dombestein (isak@dombesteindata.net)
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Isak Dombestein</title>
+    <title>About - Dombestein Data</title>
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/about.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,12 +14,12 @@
     <header class="navbar" role="banner">
         <div class="container nav-inner">
             <a href="./index.html">
-                <h1 class="logo">Isak Dombestein</h1>
+                <h1 class="logo">Dombestein Data</h1>
             </a>
             <nav role="navigation" aria-label="Main navigation">
                 <ul class="nav-links">
                     <li><a href="./projects.html">Projects</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="./about.html" aria-current="page">About</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                     <li>
                         <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
@@ -41,28 +34,61 @@
     <main class="about container">
         <section class="intro">
             <div class="intro-text">
-                <h2>About Me</h2>
+                <h2>About Dombestein Data</h2>
                 <p>
-                    Hello there! I'm Isak!
-                    <br />
-                    I'm a Digital Culture student at the University of Bergen, as well as a hobby full-stack developer, music producer, gamer and general tech geek.
+                    Dombestein Data is a small web development studio based in Bergen, Norway.
+                </p>
+                <p>
+                    I build fast, clean websites and systems with a focus on readability, maintainability, and doing things properly from the start.
+                </p>
+                <p>
+                    No bloated setups. No mystery plugins. No "We'll fix it later" solutions that quietly fall apart after launch.
+                </p>
+                <p>
+                    Most things are possible. The question is how clean you want it.
+                </p>
+                <p>
+                    If you need something delivered in a rush, rest assured it will never be a sloppy result.
+                    If you want something that is built to last, that's where I thrive and do my best work.
                 </p>
             </div>
-            <img src="./assets/profile.jpg" class="intro-img" alt="Isak Dombestein Portrait" />
         </section>
     
+        <section class="about-me">
+            <div class="split">
+                <div class="split-text">
+                    <h3>The guy behind it all</h3>
+                    <p>
+                        I'm Isak - a Digital Culture student at the University of Bergen, developer by habit, and the person behind Dombestein Data.
+                    </p>
+                    <p>
+                        I care a lot about structure, clarity, and systems that make sense - both in code and in collaboration. I enjoy starting from a blank slate and
+                        building things up deliberately, rather than stacking plugins and hoping for the best.
+                    </p>
+                    <p>
+                        I tend to focus on the small details that make a site feel solid: performance, accessibility, predictable behavior, and setups that are understandable six months down the line, not just on launch day.
+                    </p>
+                </div>
+
+                <div class="split-media">
+                    <img src="./assets/profile.jpg" class="intro-img" alt="Isak Dombestein Portrait" />
+                    <p id="hero-image-subtext"><i><strong>Image: </strong><a href="https://bywallem.no/" target="_blank" rel="noopener noreferrer">Wallem / Wallem Media</a></i></p>
+                </div>
+            </div>            
+        </section>
+
         <section class="current-activities">
-            <h3>What I Do</h3>
+            <h3>What I do</h3>
             <p>
-                Currently, I'm;
-                <ul>
-                    <li>Building projects like <strong>Velox</strong> and <strong>Focaline</strong></li>
-                    <li>Studying ethics, games and digital aesthetics at UiB</li>
-                    <li>Producing electronic music in Ableton Live</li>
-                    <li>Writing, teaching and running nerdy workshops</li>
-                    <li>Working on a 3rd person camera mod for R.E.P.O</li>
-                </ul>
+                These days, my work usually falls somewhere between development, study, and the occasional creative detour.
             </p>
+            <ul>
+                <li>Building web projects and systems with a focus on clean architecture and long-term maintenance</li>
+                <li>Studying ethics, games, and digital aesthetics at the University of Bergen</li>
+                <li>Producing electronic music in Ableton Live</li>
+                <li>Teaching, writing, and running nerdy workshops</li>
+                <li>Occasionally working on game mods when I should probably be asleep</li>
+            </ul>
         </section>
 
         <section class="tech-stack">
@@ -70,7 +96,10 @@
                 <div class="ts-text">
                     <h3>Tech Stack</h3>
                     <p>
-                        Currently, I'm working with:
+                        I work with modern tools, like Astro, React, PostgreSQL and Cloudflare - not because they're trendy, but because they let me build fast, predictable systems that are easy to maintain.
+                    </p>
+                    <p>
+                        The exact stack matters less than the outcome: clear structure, sensible defaults, and solutions that don't require constant babysitting.
                     </p>
                     <ul class="tech-list">
                         <li>Astro, React, TailwindCSS, shadcn/ui</li>
@@ -127,18 +156,24 @@
         </section>
 
         <section class="fun-facts">
-            <h3>Fun Facts</h3>
+            <h3>A few fun facts</h3>
+            <p>
+                Not everything needs to be serious.
+            </p>
             <ul>
-                <li>I play D&D with fun characters like Gwindith Gawrshford (If not obvious, yes, he's based on Disney's Goofy.)</li>
+                <li>I play D&D, including a character loosely based on Disney's Goofy <i>(yes, really)</i>.</li>
                 <li>I stream every once in a blue moon over at Twitch (@khrathrox)</li>
-                <li>I think Battery Fresh is criminally underrated</li>
+                <li>Battery Fresh is criminally underrated. I will not elaborate.</li>
             </ul>
         </section>
 
         <section class="contact-cta">
             <h3>Get in Touch</h3>
             <p>
-                Want to collaborate, hire me or just say hi? Use the social buttons on the bottom of the page, or head over to the <a href="./contact.html">Contact</a> page and drop me a message!
+                Want to collaborate, hire me or just say hi? 
+            </p>
+            <p>
+                You'll find my social links at the bottom of the page, or you can head over to the <a href="./contact.html">Contact page</a> and drop me a message.
             </p>
         </section>
 
@@ -160,11 +195,15 @@
             </a>
         </div>
         <div class="container">
-            <p>&copy; 2025, Isak Dombestein, All Rights Reserved.</p>
+            <p>&copy; 2025, Dombestein Data, All Rights Reserved.</p>
+        </div>
+        <div class="container">
+            <a href="./privacy.html">Privacy Policy</a>
+            <a href="./assets/dombestein_data_dpa_v1.pdf" target="_blank">DPA</a>
+            <a href="#" id="how-built-link">How this site was built</a>
         </div>
     </footer>
 
     <script src="./scripts/main.js"></script>
-    <script src="./scripts/contact.js"></script>
 </body>
 </html>

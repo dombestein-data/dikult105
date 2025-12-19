@@ -1,27 +1,20 @@
-<!--
-    File: index.html
-    Description: Homepage part of portfolio mockup page
-    Date: 25.09.2025
-    Author: Isak Dombestein (isak@dombesteindata.net)
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isak Dombestein - Portfolio</title>
+    <title>Dombestein Data</title>
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="home">
     <header class="navbar" role="banner">
         <div class="container nav-inner">
-            <a href="#">
-                <h1 class="logo">Isak Dombestein</h1>
+            <a href="./index.html" aria-current="page">
+                <h1 class="logo">Dombestein Data</h1>
             </a>
             <nav role="navigation" aria-label="Main navigation">
                 <ul class="nav-links">
@@ -40,23 +33,118 @@
 
     <main role="main">
         <div class="hero">
+            <!-- background animation stuff -->
+            <canvas id="fx3d" aria-hidden="true"></canvas>
+            <canvas id="fx2d" aria-hidden="true"></canvas>
+
             <div class="hero-inner">
                 <div class="hero-text">
-                    <h1>Isak Dombestein</h1>
-                    <h2>Full Stack Developer, Nerd and Tinkerer</h2>
+                    <h1>Dombestein Data</h1>
+                    <h2>Websites, systems, and small things done right.</h2>
                     <p>
-                        I design and build modern web experiences, from intuitive web interfaces to performant backends.
-                        Currently working on <strong>Focaline</strong>, <strong>Velox</strong> and other tools to make the digital life easier.
+                        Small web development studio based in Bergen, Norway.
+                        Focused on clean design, solid systems, and websites that just straight up last.
                     </p>
                     <div class="hero-cta">
                         <a href="./projects.html" class="btn btn-primary">Explore Projects</a>
-                        <a href="./assets/resume.pdf" class="btn btn-outline" download>Download Resume</a>
+                        <a href="./contact.html" class="btn btn-outline" download>Work with me</a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <img src="assets/profile.jpg" alt="Isak Dombestein Portrait" loading="lazy" />
-                    <p id="hero-image-subtext"><i><strong>Image: </strong>Alexander Wallem / Wallem Media</i></p>
-                </div>
+
+                <section class="services">
+                    <h2>What I do</h2>
+                    <p class="services-intro">A short explainer. No BS.</p>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <h3 id="service-web">Web Design &amp; Development</h3>
+                            <p aria-describedby="service-web">
+                                Custom websites built from scratch, focused on clarity, performance,
+                                and long-term maintainability.
+                            </p>
+                        </div>
+
+                        <div class="service-card">
+                            <h3 id="service-systems">Systems &amp; Integrations</h3>
+                            <p aria-describedby="service-systems">
+                                Forms, booking solutions, dashboards, and small custom tools that make your
+                                website actually useful.
+                            </p>
+                        </div>
+
+                        <div class="service-card">
+                            <h3 id="service-perf">Performance &amp; Accessibility</h3>
+                            <p aria-describedby="service-perf">
+                                Fast load times, readable interfaces, and accessible markup that works
+                                well across all devices.
+                            </p>
+                        </div>
+
+                        <div class="service-card">
+                            <h3 id="service-maintenance">Maintenance &amp; Iteration</h3>
+                            <p aria-describedby="service-maintenance">
+                                Ongoing updates, fixes and improvements for websites that need to
+                                evolve over time.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="process">
+                    <h2>How it works</h2>
+                    <p class="process-intro">Clear steps. No surprises. No chaos.</p>
+
+                    <div class="process-timeline">
+                        <div class="process-step">
+                            <span class="process-dot"></span>
+                            <div class="process-content">
+                                <h3>1) Quick chat</h3>
+                                <p>
+                                    You tell me what you need, what matters most, and what success looks like.
+                                    I'll ask the annoying-but-useful questions.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <span class="process-dot"></span>
+                            <div class="process-content">
+                                <h3>2) Blueprint</h3>
+                                <p>
+                                    I propose a small, clear plan: pages, features, timeline, and what’s in or out.
+                                    Then we lock the direction before building.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <span class="process-dot"></span>
+                            <div class="process-content">
+                                <h3>3) Build &amp; polish</h3>
+                                <p>
+                                    I build the site and share progress early. We tweak details, polish UX,
+                                    and make sure it feels right on both desktop and mobile.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="process-step">
+                            <span class="process-dot"></span>
+                            <div class="process-content">
+                                <h3>4) Ship it &amp; keep it alive</h3>
+                                <p>
+                                    We publish, test, and make sure everything works. If you want ongoing updates,
+                                    I can keep things maintained and evolving.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="process-outro">Sounds like a plan? Awesome!</p>
+
+                    <div class="process-cta">
+                        <a href="./contact.html" class="btn btn-outline">Start a project!</a>
+                    </div>
+                </section>
             </div>
         </div>
     </main>
@@ -77,10 +165,16 @@
             </a>
         </div>
         <div class="container">
-            <p>&copy; 2025, Isak Dombestein, All Rights Reserved.</p>
+            <p>&copy; 2025, Dombestein Data, All Rights Reserved.</p>
+        </div>
+        <div class="container">
+            <a href="./privacy.html">Privacy Policy</a>
+            <a href="./assets/dombestein_data_dpa_v1.pdf" target="_blanks">DPA</a>
+            <a href="#" id="how-built-link">How this site was built</a>
         </div>
     </footer>
 
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/effects.js"></script>
 </body>
 </html>

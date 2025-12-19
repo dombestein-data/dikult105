@@ -1,10 +1,3 @@
-/*
-    File: projects.js
-    Description: Functional backbone for the projects page, part of the functional portfolio site project.
-    Date: 27.09.2025
-    Author: Isak Dombestein (isak@dombesteindata.net)
-*/
-
 const modal = document.getElementById('project-modal');
 const title = document.getElementById('modal-title');
 const desc = document.getElementById('modal-description');

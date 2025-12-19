@@ -1,16 +1,9 @@
-<!--
-    File: projects.html
-    Description: Projects part of portfolio mockup page
-    Date: 27.09.2025
-    Author: Isak Dombestein (isak@dombesteindata.net)
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Isak Dombestein</title>
+    <title>Projects - Dombestein Data</title>
     <link rel="stylesheet" href="./styles/globals.css" />
     <link rel="stylesheet" href="./styles/projects.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,11 +14,11 @@
     <header class="navbar" role="banner">
         <div class="container nav-inner">
             <a href="./index.html"> 
-                <h1 class="logo">Isak Dombestein</h1>
+                <h1 class="logo">Dombestein Data</h1>
             </a>
             <nav role="navigation" aria-label="Main navigation">
                 <ul class="nav-links">
-                    <li><a href="./projects.html">Projects</a></li>
+                    <li><a href="./projects.html" aria-current="page">Projects</a></li>
                     <li><a href="./about.html">About</a></li>
                     <li><a href="./contact.html">Contact</a></li>
                     <li>
@@ -56,6 +49,12 @@
                         <p>Online learning resource aimed at University level students learning web development</p>
                     </article>
 
+                    <article class="project-card" onclick="openProjectModal('adfontes')">
+                        <img src="./assets/adfontes.png" alt="Ad Fontes Homepage" />
+                        <h2>Ad Fontes Website</h2>
+                        <p>Website for Ad Fontes, the student bar at HF, UiB.</p>
+                    </article>
+
                     <article class="project-card" onclick="openProjectModal('velox')">
                         <img src="./assets/velox.png" alt="Velox" />
                         <h2>Velox (In Development)</h2>
@@ -70,6 +69,10 @@
                     <div class="mini-card" onclick="openProjectModal('jcompressor')">
                         <h3>JCompressor</h3>
                         <p>CLI utility for compressing files, folders and images with adjustable compression.</p>
+                    </div>
+                    <div class="mini-card" onclick="openProjectModal('agsmacos')">
+                        <h3>ags-macos</h3>
+                        <p>Script that builds and installs Adventure Game Studio (AGS) on macOS</p>
                     </div>
                 </div>
             </div>
@@ -92,7 +95,12 @@
             </a>
         </div>
         <div class="container">
-            <p>&copy; 2025, Isak Dombestein, All Rights Reserved.</p>
+            <p>&copy; 2025, Dombestein Data, All Rights Reserved.</p>
+        </div>
+        <div class="container">
+            <a href="./privacy.html">Privacy Policy</a>
+            <a href="./assets/dombestein_data_dpa_v1.pdf" target="_blank">DPA</a>
+            <a href="#" id="how-built-link">How this site was built</a>
         </div>
     </footer>
 

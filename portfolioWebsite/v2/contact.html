@@ -1,16 +1,9 @@
-<!--
-    File: index.html
-    Description: Contact part of portfolio mockup page
-    Date: 27.09.2025
-    Author: Isak Dombestein (isak@dombesteindata.net)
--->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Isak Dombestein</title>
+    <title>Contact - Dombestein Data</title>
     <link rel="stylesheet" href="./styles/globals.css">
     <link rel="stylesheet" href="./styles/contact.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,16 +11,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="true"></div>
     <header class="navbar" role="banner">
         <div class="container nav-inner">
             <a href="./index.html">
-                <h1 class="logo">Isak Dombestein</h1>
+                <h1 class="logo">Dombestein Data</h1>
             </a>
             <nav role="navigation" aria-label="Main navigation">
                 <ul class="nav-links">
                     <li><a href="./projects.html">Projects</a></li>
                     <li><a href="./about.html">About</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="./contact.html" aria-current="page">Contact</a></li>
                     <li>
                         <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
                             <span id="theme-icon"></span>
@@ -52,6 +46,15 @@
             <label for="message">Message:</label>
             <textarea rows="5" class="input-field" id="message" placeholder="Your Message" required></textarea>
 
+            <!-- Cloudflare Turnstile verification - should not be visible unless the device's traffic is suspicious. -->
+            <div class="turnstile-wrapper">
+                <div 
+                class="cf-turnstile" 
+                data-sitekey="0x4AAAAAACHF5UsFjt2i7yvk" 
+                data-theme="auto"
+                ></div>
+            </div>
+
             <button type="submit">Submit</button>
         </form> 
     </main>
@@ -72,11 +75,21 @@
             </a>
         </div>
         <div class="container">
-            <p>&copy; 2025, Isak Dombestein, All Rights Reserved.</p>
+            <p>&copy; 2025, Dombestein Data, All Rights Reserved.</p>
+        </div>
+        <div class="container">
+            <a href="./privacy.html">Privacy Policy</a>
+            <a href="./assets/dombestein_data_dpa_v1.pdf" target="_blank">DPA</a>
+            <a href="#" id="how-built-link">How this site was built</a>
         </div>
     </footer>
 
     <script src="./scripts/main.js"></script>
     <script src="./scripts/contact.js"></script>
+    <script
+        src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+        async
+        defer
+    ></script>
 </body>
 </html>

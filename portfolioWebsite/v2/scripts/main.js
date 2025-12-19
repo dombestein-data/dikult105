@@ -1,10 +1,3 @@
-/*
-    File: main.js
-    Description: This file is a general functional backbone for the entire website. All pages should import this file at the bottom of its body element.
-    Date: 25.09.2025
-    Author: Isak Dombestein (isak@dombesteindata.net)
-*/
-
 const themeToggle = document.getElementById('theme-toggle') ;
 const themeIcon = document.getElementById('theme-icon');
 const body = document.body;
@@ -87,4 +80,104 @@ function injectSVGIcons() {
 
 document.addEventListener('DOMContentLoaded', () => {
   injectSVGIcons();
-})
+
+  const howBuiltLink = document.getElementById('how-built-link');
+
+  if (howBuiltLink) {
+    howBuiltLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      openHowBuiltModal(howBuiltLink);
+    });
+  }
+});
+
+function openHowBuiltModal(triggerEl) {
+  // If the modal already exists on the page, just show it instead of injecting it again.
+  let modalRoot = document.getElementById('how-built-modal');
+  if (!modalRoot) {
+    modalRoot = injectHowBuiltModal();
+  }
+
+  modalRoot.classList.add('is-open');
+
+  // Save the trigger for focus return
+  modalRoot._triggerEl = triggerEl;
+
+  // Focus close button for accessibility
+  const closeBtn = modalRoot.querySelector('[data-modal-close]');
+  if (closeBtn) closeBtn.focus();
+
+  // Add class to prevent page scroll when modal is open
+  document.body.classList.add('modal-open');
+}
+
+function injectHowBuiltModal() {
+  const modalHTML = `
+    <div id="how-built-modal" class="modal-root" role="dialog" aria-modal="true" aria-label="How this site was built">
+      <div class="modal-backdrop" data-modal-close></div>
+
+      <div class="modal-panel" role="document">
+        <button class="modal-close" type="button" data-modal-close aria-label="Close modal">×</button>
+
+        <h2>How this site was made</h2>
+        <p class="modal-lead">
+          Built with plain HTML, CSS, and JavaScript - Intentionally. The goal was to focus on fundamentals: structure, readability, performance and maintainability.
+        </p>
+
+        <h3>Key choices</h3>
+        <ul>
+          <li><strong>No frameworks:</strong> this page is lightweight, with all code written in-house.</li>
+          <li><strong>Reusable patterns:</strong> glass UI + modals reused across pages.</li>
+          <li><strong>Privacy-aware:</strong> contact form uses Cloudflare Turnstile to prevent from bot attacks, data is sent to a dedicated API-endpoint made specifically for this purpose our custom API platform.</li>
+          <li><strong>Progressive enhancement:</strong> Content loads only when needed.</li>
+        </ul>
+
+        <h3>Future plans (What I want to improve moving ahead)</h3>
+        <ul>
+          <li>Merge the page over to the Astro Framework and unify shared layouts into single, reusable components.</li>
+          <li>More automated accessibility checks and keyboard/focus polish.</li>
+          <li>Better content tooling for the page (CMS or a dedicated markdown pipeline).</li>
+        </ul>
+      </div>
+    </div>
+  `;
+
+  // create the container
+  const wrapper = document.createElement('div');
+  wrapper.innerHTML = modalHTML.trim();
+  const modalRoot = wrapper.firstElementChild;
+
+  // inject the modal onto the page
+  document.body.appendChild(modalRoot);
+
+  // wire close btns and backdrop
+  modalRoot.querySelectorAll('[data-modal-close]').forEach((el) => {
+    el.addEventListener('click', () => closeHowBuiltModal(modalRoot));
+  });
+
+  // esc key should also close the modal
+  modalRoot.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeHowBuiltModal(modalRoot);
+  });
+
+  return modalRoot;
+}
+
+function closeHowBuiltModal(modalRoot) {
+  if (!modalRoot) return;
+
+  modalRoot.classList.remove('is-open');
+
+  // return focus to page
+  const triggerEl = modalRoot._triggerEl;
+  if(triggerEl && typeof triggerEl.focus === 'function') {
+    triggerEl.focus();
+  }
+
+  // remove the modal entirelly from the dom
+  modalRoot.remove();
+
+  // restore scroll lock
+  document.body.classList.remove('modal-open');
+
+}
